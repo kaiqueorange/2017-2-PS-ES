@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
     EditText editMail, editSenha;
     String mail, senha;
-    ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -28,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         editMail = findViewById(R.id.editMail);
         editSenha = findViewById(R.id.editSenha);
-
-        progressDialog = new ProgressDialog(this);
     }
 
     public void entrar(View view){
@@ -46,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        progressDialog.setMessage("Entrando...");
-        progressDialog.show();
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.signInWithEmailAndPassword(mail, senha)
@@ -56,12 +50,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            progressDialog.dismiss();
                             finish();
                             startActivity(new Intent(getApplicationContext(), Dashboard.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Usuário/senha inválidos.", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
                         }
                     }
                 });
