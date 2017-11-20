@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1055335302492",
+    "firebase_url": "https://locacarr.firebaseio.com",
+    "project_id": "locacarr",
+    "storage_bucket": "locacarr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055335302492:android:e7ca31d273facc75",
+        "android_client_info": {
+          "package_name": "br.com.flores.marcio.loccarr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055335302492-6p31gipalv8dro7ue223lokhur8ctt2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaeAolCRE9dx1Y0VZQmgdfBR_xF3u4GQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
