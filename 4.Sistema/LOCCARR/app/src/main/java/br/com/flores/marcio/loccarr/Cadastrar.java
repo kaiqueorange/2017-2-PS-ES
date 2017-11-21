@@ -14,11 +14,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Cadastrar extends AppCompatActivity {
     EditText editMail, editSenha, editSenhaConfirmacao;
     String mail, senha, senhaConfirmacao;
     FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
     ProgressDialog progressDialog;
 
     @Override
@@ -59,7 +61,7 @@ public class Cadastrar extends AppCompatActivity {
         }
 
         progressDialog.setMessage("Cadastrando...");
-        progressDialog.show();;
+        progressDialog.show();
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -75,6 +77,20 @@ public class Cadastrar extends AppCompatActivity {
                         } else {
                             Toast.makeText(Cadastrar.this, "Não foi possível realizar o cadastro.", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
+                        }
+                    }
+                });
+
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        firebaseUser.sendEmailVerification()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(Cadastrar.this, "E-mail de confirmação enviado para "+firebaseUser.getEmail()+".", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Cadastrar.this, "Não foi possível enviar o e-mail de confirmação.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
