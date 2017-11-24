@@ -30,16 +30,6 @@
         android:hint="Senha"
         android:inputType="textPassword" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Esqueci a minha senha"
-        android:id="@+id/textEsqueci"
-        android:layout_below="@id/buttonLogin"
-        android:textColor="@color/colorAccent"
-        android:textAlignment="center"
-        android:textSize="25dp"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -81,19 +81,19 @@ public class Cadastrar extends AppCompatActivity {
                     }
                 });
 
-        firebaseUser = firebaseAuth.getCurrentUser();
+        //firebaseUser = firebaseAuth.getCurrentUser();
 
-        firebaseUser.sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(Cadastrar.this, "E-mail de confirmação enviado para "+firebaseUser.getEmail()+".", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(Cadastrar.this, "Não foi possível enviar o e-mail de confirmação.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        //firebaseUser.sendEmailVerification()
+          //      .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            //        @Override
+              //      public void onComplete(@NonNull Task<Void> task) {
+                //        if (task.isSuccessful()){
+                  //          Toast.makeText(Cadastrar.this, "E-mail de confirmação enviado para "+firebaseUser.getEmail()+".", Toast.LENGTH_SHORT).show();
+                    //    } else {
+                      //      Toast.makeText(Cadastrar.this, "Não foi possível enviar o e-mail de confirmação.", Toast.LENGTH_SHORT).show();
+                      //  }
+                  //  }
+                //});
 
     }
 }

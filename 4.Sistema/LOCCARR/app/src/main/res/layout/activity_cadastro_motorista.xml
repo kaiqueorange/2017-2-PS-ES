@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="br.com.flores.marcio.loccarr.CadastroMotorista">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do motorista"
+        android:inputType="textPersonName"
+        android:id="@+id/editNome"/>
+
+    <EditText
+        android:id="@+id/editCnh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editNome"
+        android:inputType="number"
+        android:hint="CNH do motorista" />
+
+    <EditText
+        android:id="@+id/editData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editCnh"
+        android:hint="Data de ingresso (DDMMAAAA)"
+        android:inputType="number" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editData"
+        android:background="@color/colorPrimary"
+        android:onClick="cadastrar"
+        android:text="Cadastrar"
+        android:textColor="@color/colorWhite" />
+
+</RelativeLayout>

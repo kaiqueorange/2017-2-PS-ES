@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Dashboard" />
-        <activity android:name=".Cadastrar"></activity>
+        <activity android:name=".Cadastrar" />
+        <activity android:name=".ManterMotorista" />
+        <activity android:name=".CadastroMotorista" />
+        <activity android:name=".ExclusaoMotorista"></activity>
     </application>
 
 </manifest>
